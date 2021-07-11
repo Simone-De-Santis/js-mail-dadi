@@ -20,16 +20,19 @@ Buon lavoro,  buon weekend e... forza azzurri :it:! :faccia_leggermente_sorriden
 
 var player1 = Math.floor(Math.random() * 6) + 1;
 var player2 = Math.floor(Math.random() * 6) + 1;
+var resultElement = document.getElementById("result")
 console.log("tiro giocatore 1 : ", player1)
 console.log("tiro giocatore 2 : ", player2)
 
+var message;
 if (player1 > player2) {
-    console.log("giocatore 1 vince")
-
+    console.log("giocatore 1 vince");
+    message = "Giocatore 1 vince";
 } else if (player1 < player2) {
     console.log("giocatore 2 vince")
-
+    message = "Giocatore 2 vince";
 } else {
     console.log("Pareggio")
-
+    message = "Pareggio";
 }
+resultElement.innerText = message
