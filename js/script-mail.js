@@ -16,14 +16,28 @@ console.log("js ok")
 // ! 4-se contenuta nella lista messaggio di benvenuto
 // ! 5-se non contenuta nella lista messaggio di errore
 
+//riferimento html per stampa
+var display = document.getElementById("result")
 
+//lista email
 var mailList = ["simone-desantis@gmail.com", "simonedesantis@gmail.com", "simone92desantis@gmail.com", "simone.desantis@gmail.com",]
 console.table(mailList)
-var userEmail = prompt("inserisci la tua email :")
+//chiediamo email
+var userEmail = prompt("inserisci la tua email :", "simone-desantis@gmail.com")
 console.log(userEmail)
 
-if (userEmail == mailList) {
-    alert("benvenuto")
+// variabile di appoggio
+var isAllowed = false
+
+for (var i = 0; i < mailList.length; i++) {
+    if (userEmail === mailList[i]) {
+        isAllowed = true
+    }
+}
+console.log(isAllowed)
+if (isAllowed) {
+    display.innerText = "Benvenuto" + "  " + userEmail
 } else {
-    alert("utente non riconosciutoa")
+    display.innerText = "Utente non autorizzato"
+
 }
